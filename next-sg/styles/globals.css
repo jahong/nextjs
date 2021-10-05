@@ -1,5 +1,30 @@
 @import "tailwindcss.css";
 
+:root {
+  --color-wh: #ffffff;
+  --color-bl: #000000;
+  --color-dark: #212121;
+  --color-darkLt: #222222;
+  --color-darkDp: #181818;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 /* common */
 .container-lg {
   max-width: 1400px;
@@ -14,7 +39,8 @@
 .btn {
   @apply transition
       ease-in-out duration-700
-      text-wh inline-block
+      text-wh bg-gray-900
+      inline-block
       justify-center
       content-center
       items-center
@@ -35,21 +61,4 @@
   @apply bg-trans border-wh 
       shadow border
       hover:shadow-inner border-2;
-}
-
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  box-sizing: border-box;
 }
