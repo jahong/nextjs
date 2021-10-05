@@ -1,0 +1,55 @@
+@import "tailwindcss.css";
+
+/* common */
+.container-lg {
+  max-width: 1400px;
+  @apply m-auto;
+}
+.container {
+  max-width: 1000px;
+  @apply m-auto;
+}
+
+/* btn */
+.btn {
+  @apply transition
+      ease-in-out duration-700
+      text-wh inline-block
+      justify-center
+      content-center
+      items-center
+      px-9 py-3
+      border
+      font-bold;
+}
+.btn-df {
+  @apply bg-gradient-to-r from-lt via-cen to-rt;
+}
+
+.btn-bk {
+  @apply bg-dark
+      hover:shadow-xl;
+}
+
+.btn-line {
+  @apply bg-trans border-wh 
+      shadow border
+      hover:shadow-inner border-2;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
