@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.3.7",
+    "babel-eslint": "^10.1.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "11.1.2",
@@ -24,5 +25,9 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.3.9",
     "tailwindcss": "^2.2.16"
-  }
+  },
+  "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  "main": ".eslintrc.js",
+  "author": "",
+  "license": "ISC"
 }
