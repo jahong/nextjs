@@ -40,7 +40,11 @@ const Home = () => {
           type="button"
           className="btn"
           onClick={() => router.push(`/factory/${name}`)}
-        >{name} 으로 가기</button>
+        >
+          {name}
+          {' '}
+          으로 가기
+        </button>
       </main>
 
       <footer className={styles.footer}>
