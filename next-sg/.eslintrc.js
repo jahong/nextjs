@@ -34,6 +34,7 @@ module.exports = {
     "no-confusing-arrow": "off",
     "react/jsx-curly-newline": "off",
     indent: "off",
+    ignoredNodes: ['ConditionalExpression'],
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx", ".tsx"] }],
     "import/extensions": [
         "error",

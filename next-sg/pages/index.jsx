@@ -5,8 +5,12 @@ import Link from 'next/link';
 import Head from 'next/head';
 import Image from 'next/image';
 import styles from '../styles/Home.module.css';
+import fetch from 'isomorphic-unfetch'
 
-const Home = () => {
+const Home = ({ user }) => {
+
+  const username = user && user.name;;
+
   const [name, setName] = useState('test');
   const router = useRouter();
   console.log(router);
@@ -22,8 +26,7 @@ const Home = () => {
 
       <main className={styles.main}>
         <h2>Link to ’ factory Page</h2>
-        <Link href="/factory/factoryList">Move to home</Link>
-        <Link href="/factory/factoryList${}">Move to /factory</Link>
+        <div>user:  { user }</div>
 
         <button
           type="button"
@@ -64,5 +67,19 @@ const Home = () => {
     </div>
   );
 };
+
+export const getServerSideProps = async () => { 
+  try {
+    const res = await fetch("https: //api.github.com/users/jerrynim"); 
+    if (res.status === 200) {
+      const user = await res.json();
+      return { props: { user } };
+    }
+    return { props: {} }; 
+  } catch (e) { 
+    console.log(e);
+    return { props: {} }; 
+  }
+}
 
 export default Home;
