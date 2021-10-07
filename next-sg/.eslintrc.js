@@ -4,24 +4,25 @@ module.exports = {
     es2021: true,
   },
   extends: [
-    'plugin:react/recommended',
-    'airbnb',
+    "plugin:react/recommended",
+    "airbnb",
   ],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: "module",
   },
   plugins: [
-    'react',
+    "react",
   ],
   rules: {
-    quotes: ["error", "double"],
+    quotes: ["off", "single"],
     "typescript-eslint/quotes": ["error", "double"],
-    "no-unused-vars": "off",
+    "no-unused-vars": "warn",
     "spaced-comment": "off",
+    "react/react-in-jsx-scope": "off",
     "typescript-eslint/no-unused-vars": "warn",
     "jsx-ally/corrtrol-has-associated-label": "off",
     "react/no-array-index-key": "off", // key값으로 index를 人b용할 수 있다. "conrna-dangle": "off", // 마지막에 , 을 넣어주지 않는다.
@@ -33,10 +34,7 @@ module.exports = {
     "no-confusing-arrow": "off",
     "react/jsx-curly-newline": "off",
     indent: "off",
-    "react/jsx-filename-extension": [
-      1,
-      { extensions: [".js", ".jsx", ".tsx"] },
-    ],
+    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx", ".tsx"] }],
     "import/extensions": [
         "error",
         "ignorePackages",
@@ -44,7 +42,7 @@ module.exports = {
           js: "never",
           jsx: "never",
           ts: "never",
-          tsx: "never"
+          tsx: "never",
         },
     ],
   },
