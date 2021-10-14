@@ -1,15 +1,13 @@
 import { useState } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 
 import Head from 'next/head';
 import Image from 'next/image';
+import fetch from 'isomorphic-unfetch';
 import styles from '../styles/Home.module.css';
-import fetch from 'isomorphic-unfetch'
 
 const Home = ({ user }) => {
-
-  const username = user && user.name;;
+  const username = user && user.name;
 
   const [name, setName] = useState('test');
   const router = useRouter();
@@ -26,7 +24,9 @@ const Home = ({ user }) => {
 
       <main className={styles.main}>
         <h2>Link to ’ factory Page</h2>
-        <div>user:  { user }</div>
+        <div>
+          user:{' '}{ username }
+        </div>
 
         <button
           type="button"
@@ -35,13 +35,20 @@ const Home = ({ user }) => {
         >
           factory
         </button>
+        <button
+          type="button"
+          className="btn"
+          onClick={() => router.push('./static')}
+        >
+          static
+        </button>
         <input
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <button
           type="button"
-          className="btn"
+          className="btn bg-dark-200"
           onClick={() => router.push(`/factory/${name}`)}
         >
           {name}
@@ -68,18 +75,18 @@ const Home = ({ user }) => {
   );
 };
 
-export const getServerSideProps = async () => { 
+export const getServerSideProps = async () => {
   try {
-    const res = await fetch("https: //api.github.com/users/jerrynim"); 
+    const res = await fetch('https://api.github.com/users/jahong');
     if (res.status === 200) {
       const user = await res.json();
       return { props: { user } };
     }
-    return { props: {} }; 
-  } catch (e) { 
+    return { props: {} };
+  } catch (e) {
     console.log(e);
-    return { props: {} }; 
+    return { props: {} };
   }
-}
+};
 
 export default Home;
